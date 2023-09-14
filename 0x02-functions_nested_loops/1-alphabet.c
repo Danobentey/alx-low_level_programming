@@ -18,11 +18,3 @@ void print_alphabet(void)
 	_putchar('\n');
 
 }
-
-	while (alphabet <= 'z') {
-		_putchar(alphabet);
-		alphabet++;
-	}
-	_putchar("\n");
-
-}
