@@ -5,8 +5,19 @@
  * Return:0
  */
 
-int printAlphabet (void) {
-	char alphabet = 'a';
+void print_alphabet(void)
+{
+	char c = 'a';
+
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+
+	}
+	_putchar('\n');
+
+}
 
 	while (alphabet <= 'z') {
 		_putchar(alphabet);
