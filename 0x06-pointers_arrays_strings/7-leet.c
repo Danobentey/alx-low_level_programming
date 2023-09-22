@@ -8,18 +8,18 @@
  */
 char *leet(char *str)
 {
-    int i, j;
-    char leet_map[] = "4433007711"; // Mapping for a, e, o, t, l (and their uppercase equivalents)
+    char leet_map[128] = {0}; // Initialize an array to map characters
 
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        for (j = 0; "aeotlAEOTL"[j] != '\0'; j++)
-        {
-            if (str[i] == "aeotlAEOTL"[j])
-            {
-                str[i] = leet_map[j];
-                break;
-            }
+    // Define mapping for lowercase characters
+    leet_map['a'] = leet_map['A'] = '4';
+    leet_map['e'] = leet_map['E'] = '3';
+    leet_map['o'] = leet_map['O'] = '0';
+    leet_map['t'] = leet_map['T'] = '7';
+    leet_map['l'] = leet_map['L'] = '1';
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (leet_map[str[i]] != 0) {
+            str[i] = leet_map[str[i]];
         }
     }
 
