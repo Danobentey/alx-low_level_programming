@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * leet - encodes a string in 1337
- * @s: string to be encoded
+ * leet - Encodes a string into 1337.
+ * @str: The string to encode.
  *
- * Return: the resulting string;
+ * Return: A pointer to the resulting encoded string.
  */
-char *leet(char *s)
+char *leet(char *str)
 {
-	int i, j;
+    int i, j;
+    char leet_map[] = "4433007711"; // Mapping for a, e, o, t, l (and their uppercase equivalents)
 
-	char *a = "aAeEoOtTlL";
-	char *b = "4433007711";
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        for (j = 0; "aeotlAEOTL"[j] != '\0'; j++)
+        {
+            if (str[i] == "aeotlAEOTL"[j])
+            {
+                str[i] = leet_map[j];
+                break;
+            }
+        }
+    }
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j = 0; j < 10; j++)
-		{
-			if (s[i] == a[j])
-			{
-				s[i] = b[j];
-			}
-		}
-	}
-
-	return (s);
+    return str;
 }
+
